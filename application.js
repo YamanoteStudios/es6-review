@@ -37,7 +37,8 @@ var deliveryBoy ={
     },
     
     receive: function () {
-      this.handleMessage("Hello, ", message => console.log(message + this.name))
+    
+      this.handleMessage("Hello, ", message =>  displayInPreview(message + this.name));
     }
   }
   
@@ -64,5 +65,10 @@ var deliveryBoy ={
       
       arrowFunctionDeliveryBoy.receive();
       
-    
+      function displayInPreview(string) {
+        var newDiv = document.createElement("div"); 
+        var newContent = document.createTextNode(string); 
+        newDiv.appendChild(newContent);
+        document.body.appendChild(newDiv)
+      }
   
