@@ -4,12 +4,19 @@ function feeling(who = "Chris" , emotion = "horny") {
 
 console.log(feeling("Jamie","so wet"));
 
-function start(method) {
-   method();
-}
+// function start(method) {
+//    method();
+// }
 
 
 // start(); //  the started() is undefined
-start(function() { 
-    console.log("Method Function has been called!!")
-}) // Method Function has been called!!
+// start(function() { 
+//     console.log("Method Function has been called!!")
+// }) // Method Function has been called!!
+
+
+
+let start = (method = ()=> console.log("Method Function has been called!!")) => method();
+
+
+start();
